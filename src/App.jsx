@@ -9,6 +9,7 @@ const App = () => {
   return (
     <>
       <ConfigProvider theme={{ token: { colorPrimary: "#1d3557", controlOutline: 0 } }}>
+        {/* Comments added */}
         {!isAppLoading
           ? <Routes />
           : <ScreenLoader />
