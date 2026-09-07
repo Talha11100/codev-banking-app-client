@@ -13,7 +13,7 @@ const Hero = () => {
             }
         )
     }, [])
-
+// Comment added
     return (
         <section style={{
             background: 'linear-gradient(160deg, #0A1628 0%, #0f2044 50%, #0A1628 100%)',
