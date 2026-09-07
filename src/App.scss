@@ -1,0 +1,148 @@
+        @import "./scss/bootstrap";
+        @import "./scss/auth";
+        @import "./scss/screen-loader";
+
+        :root {
+            --color-bg-primary: #0A1628;
+            --color-bg-secondary: #0f2044;
+            --color-bg-card: rgba(255, 255, 255, 0.05);
+            --color-accent: #10B981;
+            --color-accent-gold: #F59E0B;
+            --color-accent-hover: #059669;
+            --color-text-primary: #F1F5F9;
+            --color-text-secondary: #94A3B8;
+            --color-border: rgba(255, 255, 255, 0.08);
+            --font-primary: 'Inter', 'Outfit', system-ui, sans-serif;
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 40px rgba(16, 185, 129, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary) !important;
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-primary);
+        }
+
+        #root {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .screen-loader {
+            background: linear-gradient(135deg, #0A1628 0%, #0f2044 50%, #1a3a6e 100%);
+            height: 100vh;
+        }
+
+        /* Global banking card style */
+        .bank-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bank-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card), var(--shadow-glow);
+        }
+
+        /* Accent gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #10B981, #34D399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Section divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+            margin: 0 auto;
+        }
+
+        /* Scroll reveal animations */
+        [data-aos] {
+            transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+        }
+
+        /* Admin UI Custom Utilities */
+        .admin-stat-card {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: all 0.25s ease-in-out;
+        }
+        .admin-stat-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .admin-card-header {
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        /* Transaction Receipt Printable Card */
+        .receipt-card {
+            background: #ffffff;
+            border: 2px dashed #0284c7;
+            border-radius: 16px;
+            padding: 24px;
+            color: #0f172a;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+        .receipt-stamp {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            border: 2px solid #16a34a;
+            color: #16a34a;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 8px;
+            transform: rotate(-8deg);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+        }
+
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .printable-area, .printable-area * {
+                visibility: visible;
+            }
+            .printable-area {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }

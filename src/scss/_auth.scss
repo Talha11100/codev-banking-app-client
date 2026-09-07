@@ -1,0 +1,897 @@
+/* =========================================================
+   PENDING SCREEN — COMPACT CENTERED DESIGN
+   ========================================================= */
+
+#main {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PENDING CARD
+   ========================================================= */
+
+#main .pending-screen {
+    width: 560px;
+    max-width: 100%;
+
+    padding: 30px 34px;
+
+    position: relative;
+    z-index: 2;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 20px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        0 0 50px rgba(16, 185, 129, 0.04);
+
+    text-align: center;
+
+    @media (max-width: 600px) {
+        width: 100%;
+        padding: 26px 20px;
+        border-radius: 18px;
+    }
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+#main .pending-icon-wrap {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 15px;
+}
+
+#main .pending-icon-ring {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(16, 185, 129, 0.09);
+    border: 1px solid rgba(16, 185, 129, 0.22);
+
+    box-shadow:
+        0 0 0 7px rgba(16, 185, 129, 0.025),
+        0 10px 30px rgba(16, 185, 129, 0.12);
+
+    animation: pendingIconFloat 3s ease-in-out infinite;
+}
+
+#main .pending-clock-icon {
+    font-size: 30px;
+    color: #10B981;
+
+    filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.4));
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+#main .pending-title {
+    margin: 0 0 6px;
+
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+
+    color: #F8FAFC !important;
+}
+
+#main .pending-subtitle {
+    max-width: 460px;
+
+    margin: 0 auto 20px;
+
+    color: #94A3B8;
+
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+#main .pending-subtitle::after {
+    content: '●  APPLICATION UNDER REVIEW';
+
+    display: block;
+    width: fit-content;
+
+    margin: 10px auto 0;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    background: rgba(245, 158, 11, 0.07);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+
+    color: #FBBF24;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   STEPS
+   ========================================================= */
+
+#main .pending-steps {
+    padding: 17px 18px;
+
+    text-align: left;
+
+    background: rgba(15, 32, 68, 0.30);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+}
+
+
+/* Individual step */
+
+#main .ps-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* Icons */
+
+#main .ps-icon {
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+}
+
+
+/* Completed */
+
+#main .ps-done .ps-icon {
+    color: #34D399;
+
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+
+/* Active */
+
+#main .ps-active .ps-icon {
+    color: #FBBF24;
+
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.17);
+}
+
+
+/* Pending */
+
+#main .ps-pending .ps-icon {
+    color: #64748B;
+
+    background: rgba(100, 116, 139, 0.07);
+    border: 1px solid rgba(100, 116, 139, 0.12);
+}
+
+
+/* Text */
+
+#main .ps-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+#main .ps-text strong {
+    color: #E2E8F0;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#main .ps-text span {
+    color: #64748B;
+
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+
+/* Active */
+
+#main .ps-active .ps-text strong {
+    color: #F8FAFC;
+}
+
+#main .ps-active .ps-text span {
+    color: #94A3B8;
+}
+
+
+/* =========================================================
+   CONNECTORS
+   ========================================================= */
+
+#main .ps-connector {
+    width: 1px;
+    height: 18px;
+
+    margin-left: 16px;
+
+    background: rgba(16, 185, 129, 0.25);
+}
+
+#main .ps-connector-dim {
+    background: rgba(100, 116, 139, 0.15);
+}
+
+
+/* =========================================================
+   INFO BOX
+   ========================================================= */
+
+#main .pending-info-box {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 13px;
+    padding: 10px 12px;
+
+    text-align: left;
+
+    background: rgba(59, 130, 246, 0.045);
+
+    border: 1px solid rgba(59, 130, 246, 0.10);
+    border-radius: 10px;
+}
+
+#main .pending-info-box>span {
+    flex-shrink: 0;
+
+    font-size: 13px;
+}
+
+#main .pending-info-box p {
+    margin: 0;
+
+    color: #718096;
+
+    font-size: 9.5px;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+#main .pending-footer {
+    margin: 14px 0 0;
+
+    color: #64748B;
+
+    font-size: 11px;
+}
+
+#main .pending-footer .forgot-link {
+    color: #10B981 !important;
+
+    font-size: 11px !important;
+    font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes pendingIconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+
+
+/* =========================================================
+   PENDING ICON — CLOCK PULSE / WAVES
+   ========================================================= */
+
+#main .pending-icon-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+
+/* Main clock circle */
+#main .pending-icon-ring {
+    width: 68px;
+    height: 68px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(16, 185, 129, 0.09);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   CLOCK WAVES
+   ========================================================= */
+
+#main .pending-icon-ring::before,
+#main .pending-icon-ring::after {
+    content: '';
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(16, 185, 129, 0.45);
+
+    transform: scale(1);
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation: clockWave 2.4s ease-out infinite;
+}
+
+
+/* Second wave starts slightly later */
+#main .pending-icon-ring::after {
+    animation-delay: 1.2s;
+}
+
+
+/* Clock icon */
+#main .pending-clock-icon {
+    position: relative;
+    z-index: 3;
+
+    font-size: 30px;
+    color: #10B981;
+
+    filter:
+        drop-shadow(0 0 6px rgba(16, 185, 129, 0.45));
+
+    animation: clockBeep 1.2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   TIMELINE ICON WAVES
+   ========================================================= */
+
+#main .ps-icon {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Wave around every timeline icon */
+#main .ps-icon::before {
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 9px;
+
+    border: 1px solid currentColor;
+
+    opacity: 0;
+
+    transform: scale(1);
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation: stepWave 2.4s ease-out infinite;
+}
+
+
+/* =========================================================
+   DIFFERENT TIMING FOR EACH ICON
+   ========================================================= */
+
+/* Application Received */
+#main .ps-done .ps-icon::before {
+    animation-delay: 0s;
+}
+
+
+/* Under Review */
+#main .ps-active .ps-icon::before {
+    animation-delay: 0.8s;
+}
+
+
+/* Account Activation */
+#main .ps-pending .ps-icon::before {
+    animation-delay: 1.6s;
+}
+
+
+/* =========================================================
+   ACTIVE CLOCK — EXTRA GLOW
+   ========================================================= */
+
+#main .ps-active .ps-icon {
+    animation: activeIconGlow 1.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+/* Large expanding clock waves */
+@keyframes clockWave {
+
+    0% {
+        transform: scale(1);
+        opacity: 0.65;
+    }
+
+    60% {
+        opacity: 0.18;
+    }
+
+    100% {
+        transform: scale(2.05);
+        opacity: 0;
+    }
+}
+
+
+/* Small clock "beep" */
+@keyframes clockBeep {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    10% {
+        transform: scale(1.08);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.05);
+    }
+
+    40%,
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Timeline icon waves */
+@keyframes stepWave {
+
+    0% {
+        transform: scale(1);
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 0.15;
+    }
+
+    100% {
+        transform: scale(1.65);
+        opacity: 0;
+    }
+}
+
+
+/* Active icon subtle glow */
+@keyframes activeIconGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.00);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 5px rgba(245, 158, 11, 0.06),
+            0 0 18px rgba(245, 158, 11, 0.12);
+    }
+}
+
+
+
+
+// Initial Code
+/* ===== AUTH PAGE STYLES ===== */
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: #0A1628;
+
+    /* Animated gradient orbs in background */
+    &::before {
+        content: '';
+        position: absolute;
+        top: -20%;
+        left: -10%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 70%);
+        border-radius: 50%;
+        animation: orbFloat 8s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -10%;
+        right: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(15, 32, 68, 0.8) 0%, rgba(26, 58, 110, 0.4) 50%, transparent 70%);
+        border-radius: 50%;
+        animation: orbFloat 10s ease-in-out infinite reverse;
+        pointer-events: none;
+    }
+
+    .auth-container {
+        display: flex;
+        width: 900px;
+        max-width: calc(100vw - 32px);
+        min-height: 540px;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6), 0 0 60px rgba(16, 185, 129, 0.08);
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Left branding panel */
+    .auth-brand-panel {
+        flex: 1;
+        background: linear-gradient(145deg, #0f2044 0%, #1a3a6e 50%, #0f2044 100%);
+        padding: 48px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Outfit', 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #F1F5F9;
+            z-index: 1;
+
+            .brand-icon {
+                width: 44px;
+                height: 44px;
+                background: linear-gradient(135deg, #10B981, #059669);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 22px;
+            }
+        }
+
+        .brand-content {
+            z-index: 1;
+
+            h2 {
+                font-family: 'Outfit', sans-serif;
+                font-size: 32px;
+                font-weight: 700;
+                color: #F1F5F9;
+                line-height: 1.3;
+                margin-bottom: 16px;
+            }
+
+            p {
+                font-size: 15px;
+                color: #94A3B8;
+                line-height: 1.6;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    /* Right form panel */
+    .auth-form-panel {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 48px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+            padding: 40px 24px;
+            flex: unset;
+            width: 100%;
+        }
+
+        .form-header {
+            margin-bottom: 32px;
+
+            h1 {
+                font-family: 'Outfit', sans-serif;
+                font-size: 28px;
+                font-weight: 700;
+                color: #F1F5F9 !important;
+                margin-bottom: 8px;
+            }
+
+            p {
+                font-size: 14px;
+                color: #94A3B8;
+                margin-bottom: 0;
+
+                a {
+                    color: #10B981;
+                    text-decoration: none;
+                    font-weight: 500;
+
+                    &:hover {
+                        color: #34D399;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Ant Design overrides for dark theme in auth */
+    .ant-form-item-label>label {
+        color: #CBD5E1 !important;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .ant-input-password {
+        background: rgba(255, 255, 255, 0.06) !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
+        color: #F1F5F9 !important;
+        border-radius: 10px !important;
+
+        &::placeholder {
+            color: #475569 !important;
+        }
+
+        &:focus,
+        &:hover {
+            border-color: rgba(16, 185, 129, 0.5) !important;
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.12) !important;
+        }
+    }
+
+    .ant-input-affix-wrapper {
+        background: rgba(255, 255, 255, 0.06) !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
+        border-radius: 10px !important;
+
+        &:hover,
+        &:focus-within {
+            border-color: rgba(16, 185, 129, 0.5) !important;
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.12) !important;
+        }
+
+        input {
+            background: transparent !important;
+            color: #F1F5F9 !important;
+
+            &::placeholder {
+                color: #475569 !important;
+            }
+        }
+
+        .ant-input-suffix .anticon {
+            color: #64748B !important;
+        }
+    }
+
+    .ant-btn-primary {
+        background: linear-gradient(135deg, #10B981, #059669) !important;
+        border: none !important;
+        border-radius: 10px !important;
+        height: 48px !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35) !important;
+        transition: all 0.3s ease !important;
+
+        &:hover {
+            background: linear-gradient(135deg, #059669, #047857) !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 6px 24px rgba(16, 185, 129, 0.5) !important;
+        }
+    }
+
+    .forgot-link {
+        color: #10B981 !important;
+        text-decoration: none !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+
+        &:hover {
+            color: #34D399 !important;
+        }
+    }
+
+    /* Select dropdown dark theme override */
+    .ant-select-selector {
+        background: rgba(255, 255, 255, 0.06) !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
+        border-radius: 10px !important;
+        color: #F1F5F9 !important;
+    }
+
+    .ant-select:not(.ant-select-disabled):hover .ant-select-selector,
+    .ant-select-focused .ant-select-selector {
+        border-color: rgba(16, 185, 129, 0.5) !important;
+        box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.12) !important;
+    }
+
+    .ant-select-selection-placeholder {
+        color: #475569 !important;
+    }
+
+    .ant-select-arrow {
+        color: #64748B !important;
+    }
+
+    /* Date input dark theme override */
+    input.date-input,
+    input[type="date"].date-input {
+        background: rgba(255, 255, 255, 0.06) !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-radius: 10px !important;
+        color: #F1F5F9 !important;
+        color-scheme: dark;
+        padding: 0 11px;
+        height: 40px;
+        width: 100%;
+        font-size: 14px;
+
+        &:focus,
+        &:hover {
+            border-color: rgba(16, 185, 129, 0.5) !important;
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.12) !important;
+            outline: none;
+        }
+    }
+
+    /* Plain Input (without prefix wrapper) dark theme override */
+    .ant-input:not(.ant-input-affix-wrapper .ant-input) {
+        background: rgba(255, 255, 255, 0.06) !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
+        border-radius: 10px !important;
+        color: #F1F5F9 !important;
+
+        &::placeholder {
+            color: #475569 !important;
+        }
+
+        &:focus,
+        &:hover {
+            border-color: rgba(16, 185, 129, 0.5) !important;
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.12) !important;
+        }
+    }
+}
+
+@keyframes orbFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px) scale(1);
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.05);
+    }
+}
